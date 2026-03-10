@@ -10,7 +10,6 @@ venv/
 .env
 .env.*
 !.env.example
-!.env.github.example
 
 # OS / IDE
 .DS_Store
@@ -21,4 +20,3 @@ venv/
 dist/
 build/
 *.egg-info/
-

@@ -121,32 +121,6 @@ python3 cpa_authfiles.py --help
 
 ---
 
-## 发布到 GitHub
-
-仓库内置了一键发布脚本：`scripts/publish_public_repo.sh`
-
-1) 准备 `.env.github`（不会被 git 提交）
-
-```bash
-cp .env.github.example .env.github
-```
-
-编辑 `.env.github`，填入你的 GitHub PAT：
-
-```bash
-GITHUB_TOKEN=your_token_here
-GITHUB_PUBLIC=true
-GITHUB_REPO=cpa-authfiles-cli
-```
-
-2) 一键创建 public repo 并 push：
-
-```bash
-./scripts/publish_public_repo.sh
-```
-
----
-
 ## 免责声明
 
 请确保你对目标 CPA 管理端拥有合法授权，并遵守相关服务条款与法律法规。
