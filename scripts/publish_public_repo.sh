@@ -55,15 +55,16 @@ fi
 echo "Publishing repo: $owner/$repo_name (private=$private_flag)"
 
 create_payload="$(
-  python3 - <<PY
+  PRIVATE_FLAG="$private_flag" REPO_NAME="$repo_name" REPO_DESC="$repo_desc" python3 - <<'PY'
 import json
+import os
 
 print(
     json.dumps(
         {
-            "name": "$repo_name",
-            "description": "$repo_desc",
-            "private": $private_flag,
+            "name": os.environ.get("REPO_NAME", ""),
+            "description": os.environ.get("REPO_DESC", ""),
+            "private": os.environ.get("PRIVATE_FLAG", "false").lower() == "true",
             "has_issues": False,
             "has_projects": False,
             "has_wiki": False,
